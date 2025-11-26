@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recicla+ | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <section id="cadastro" class="form-section">
+            <h1>Crie sua Conta</h1>
+            <p>Faça parte da nossa comunidade de reciclagem!</p>
+            <form action="#login">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email_cadastro">E-mail</label>
+                    <input type="email" id="email_cadastro" name="email_cadastro" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha_cadastro">Senha</label>
+                    <input type="password" id="senha_cadastro" name="senha_cadastro" placeholder="Crie uma senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirma_senha">Confirmar Senha</label>
+                    <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Sua Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Onde você mora?" required>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+            <p class="toggle-link">Já tem uma conta? <a href="#login">Faça login</a></p>
+        </section>
+
+        <section id="login" class="form-section">
+            <h1>Acesse sua Conta</h1>
+            <p>Que bom ter você de volta!</p>
+            <form action="index.html">
+                <div class="form-group">
+                    <label for="email_login">E-mail</label>
+                    <input type="email" id="email_login" name="email_login" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha_login">Senha</label>
+                    <input type="password" id="senha_login" name="senha_login" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p class="toggle-link">Não tem uma conta? <a href="#cadastro">Cadastre-se</a></p>
+        </section>
+    </div>
+</body>
+</html>

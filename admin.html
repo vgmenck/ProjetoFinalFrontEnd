@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Cadastro de Usuários</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-recycle"></i> Recicla+
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#porque-reciclar">Por que Reciclar?</a></li>
+                    <li><a href="index.html#como-separar">Como Separar?</a></li>
+                    <li><a href="index.html#pontos-de-coleta">Pontos de Coleta</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Cadastro de Usuários</h1>
+        <form id="cadastro-usuario-form">
+            <div>
+                <label for="nome">Nome do Usuário:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" id="btn-cadastrar">Cadastrar</button>
+            <button type="button" id="btn-limpar">Limpar Campos</button>
+        </form>
+
+        <h2>Usuários Cadastrados</h2>
+        <div id="pesquisa-container">
+            <input type="text" id="input-pesquisa" placeholder="Pesquisar por nome ou e-mail">
+            <button type="button" id="btn-pesquisar">Pesquisar</button>
+            <button type="button" id="btn-limpar-pesquisa">Limpar Pesquisa</button>
+        </div>
+        <ul id="lista-usuarios">
+            <!-- Usuários serão inseridos aqui pelo JavaScript -->
+        </ul>
+        <button type="button" id="btn-excluir-todos" class="btn">Excluir Todos os Usuários</button>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Recicla+ | Desenvolvido para a disciplina de Programação Web Front-End.</p>
+                <div class="curriculos">
+                    <p>Integrantes:</p>
+                    <ul>
+                        <li><a href="https://victortamay.github.io/Curriculum-Vitae/" target="_blank">Victor Ehiti Itimura Tamay</a></li>
+                        <li><a href="https://vgmenck.github.io/Curriculum-Vitae/" target="_blank">Vitor Gabriel Menck Diniz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
