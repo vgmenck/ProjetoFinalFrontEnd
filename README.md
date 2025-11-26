@@ -59,7 +59,7 @@ A estrutura de pastas e arquivos do repositório segue este padrão:
 ## 🚀 Como Executar o Projeto Localmente  
 
 1. Clone este repositório:
-   git clone https://github.com/vgmenck/Projeto-Front-End.git
+   git clone https://github.com/vgmenck/ProjetoFinalFrontEnd
 2. Acesse o diretório do projeto: 
    cd Projeto-Front-End
 3. Abra o arquivo login.html
