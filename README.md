@@ -6,7 +6,7 @@ Projeto da disciplina **EC47C – Programação Web Front-End**
 ## 💡 Descrição do Projeto  
 Este projeto tem como objetivo colocar em prática os conceitos da disciplina EC47C — Programação Web Front-End — desenvolvendo uma interface web (HTML, CSS, JavaScript) funcional, responsiva e com boa usabilidade.  
 
-Ele contempla páginas como **página inicial**, **login** e demais funcionalidades front-end sugeridas ou exigidas no escopo da disciplina.  
+Ele contempla páginas como **página inicial**, **login** e **admin** e demais funcionalidades front-end sugeridas ou exigidas no escopo da disciplina.  
 
 O foco está em:
 - Estrutura semântica em HTML;  
@@ -27,6 +27,8 @@ A estrutura de pastas e arquivos do repositório segue este padrão:
 
 ├── images/ ← pasta com imagens usadas na interface (ícones, logotipos, backgrounds etc)
 
+├── admin.html ← página do admin
+
 ├── index.html ← página inicial do site
 
 ├── login.html ← página de login
@@ -37,6 +39,7 @@ A estrutura de pastas e arquivos do repositório segue este padrão:
 ### Descrição de cada parte  
 - **css/** → Todos os arquivos de estilo ficam aqui, organizados conforme convenção (ex: `styles.css`, `login.css`, etc).  
 - **images/** → Imagens, ícones, gráficos ou fundos usados nas páginas.  
+- **admin/** → Página principal do admin, tendo função principal a manipulação de usuários cadastrados.  
 - **index.html** → Página principal do projeto, com estrutura básica, header, conteúdo e footer.  
 - **login.html** → Página de autenticação, com formulário de login, validação (front-end) e redirecionamento.  
 - **README.md** → Documentação do projeto (você está lendo!).  
