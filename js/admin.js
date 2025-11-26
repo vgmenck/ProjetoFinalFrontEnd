@@ -1,4 +1,3 @@
-// Arquivo: admin.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cadastro-usuario-form');
@@ -11,18 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const STORAGE_KEY = 'usuariosCadastrados';
 
-    // 1. Função para carregar usuários do Local Storage e renderizar a lista
+    //Função para carregar usuários do Local Storage e renderizar a lista
     function carregarUsuarios() {
         const usuariosJSON = localStorage.getItem(STORAGE_KEY);
         return usuariosJSON ? JSON.parse(usuariosJSON) : [];
     }
 
-    // 2. Função para salvar usuários no Local Storage
+    //Função para salvar usuários no Local Storage
     function salvarUsuarios(usuarios) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
     }
 
-    // 3. Função para renderizar a lista de usuários (ou a lista filtrada)
+    //Função para renderizar a lista de usuários (ou a lista filtrada)
     function renderizarLista(usuariosParaExibir) {
         listaUsuarios.innerHTML = ''; // Limpa a lista atual
         const usuarios = usuariosParaExibir || carregarUsuarios();
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         usuarios.forEach((usuario, index) => {
             const li = document.createElement('li');
-            // Formato da data: DD/MM/AAAA HH:MM:SS
             const dataFormatada = new Date(usuario.dataCadastro).toLocaleString('pt-BR');
             
             li.innerHTML = `
@@ -46,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             listaUsuarios.appendChild(li);
         });
 
-        // Adiciona event listeners para os botões de exclusão
+
         document.querySelectorAll('.btn-excluir').forEach(button => {
             button.addEventListener('click', (e) => {
                 const id = e.target.getAttribute('data-index');
@@ -55,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Função para cadastrar novo usuário (2.0 pontos)
+    //Função para cadastrar novo usuário
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -68,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const novoUsuario = {
-            // Usar um timestamp como ID único para facilitar a exclusão
+            // Usar ID único para facilitar a exclusão
             id: Date.now().toString(), 
             nome: nome,
             email: email,
@@ -79,14 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         usuarios.push(novoUsuario);
         salvarUsuarios(usuarios);
         
-        // Limpa os campos do formulário após o cadastro
         limparCampos();
 
-        // Renderiza a lista atualizada
         renderizarLista();
     });
 
-    // 5. Função para limpar campos do formulário (0.5 pontos)
+    //Função para limpar campos do formulário
     function limparCampos() {
         document.getElementById('nome').value = '';
         document.getElementById('email').value = '';
@@ -95,10 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnLimpar.addEventListener('click', limparCampos);
 
-    // 6. Função para excluir um item da lista e do Local Storage (2.0 pontos)
+    //Função para excluir um item da lista e do Local Storage
     function excluirUsuario(id) {
         let usuarios = carregarUsuarios();
-        // Filtra a lista, mantendo apenas os usuários cujo ID não corresponde ao ID a ser excluído
         const novaLista = usuarios.filter(usuario => usuario.id !== id);
         
         if (novaLista.length < usuarios.length) {
@@ -110,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 7. Função para excluir todos os itens da lista e do Local Storage (1.0 ponto)
+    //Função para excluir todos os itens da lista e do Local Storage
     btnExcluirTodos.addEventListener('click', () => {
         if (confirm('Tem certeza que deseja excluir TODOS os usuários cadastrados?')) {
             localStorage.removeItem(STORAGE_KEY);
@@ -119,13 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 8. Função para pesquisar/filtrar os itens da lista (2.0 pontos)
+    //Função para pesquisar/filtrar os itens da lista
     function pesquisarUsuarios() {
         const termo = inputPesquisa.value.toLowerCase().trim();
         const usuarios = carregarUsuarios();
 
         if (!termo) {
-            renderizarLista(); // Se o campo estiver vazio, mostra todos
+            renderizarLista(); 
             return;
         }
 
@@ -144,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 9. Função para limpar a pesquisa e mostrar todos os usuários
+    //Função para limpar a pesquisa e mostrar todos os usuários
     btnLimparPesquisa.addEventListener('click', () => {
         inputPesquisa.value = '';
         renderizarLista();
